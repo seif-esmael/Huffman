@@ -177,8 +177,9 @@ public class huff extends javax.swing.JFrame {
         }
         else
         {
-            String originalContent = inputContent.getText();            
-            HuffmanCompression.compress(originalContent);
+            String originalContent = inputContent.getText();                                   
+            String modifiedContent = originalContent.substring(0, originalContent.length() - 1);            
+            HuffmanCompression.compress(modifiedContent);     
         }
     }//GEN-LAST:event_compressActionPerformed
 
