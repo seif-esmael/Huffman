@@ -67,8 +67,12 @@ public class HuffmanCompression {
             if (node.character != ' ') {
                 codes.put(node.character, code);
             }
-            generateCodes(node.left, code + "0", codes);
-            generateCodes(node.right, code + "1", codes);
+            if(node.left != null || node.right != null)
+            {
+                generateCodes(node.left, code + "0", codes);
+                generateCodes(node.right, code + "1", codes);
+            }
+                
         }
     }
      
