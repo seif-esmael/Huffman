@@ -4,12 +4,8 @@
  */
 package huffman;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
+import java.io.*;
+import javax.swing.*;
 /**
  *
  * @author Seif
@@ -143,7 +139,7 @@ public class huff extends javax.swing.JFrame {
             try {                
                 File selectedFile = fileChooser.getSelectedFile();
                 String filename = selectedFile.getName();
-                if(!filename.endsWith(".txt"))
+                if(false)
                 {
                     JOptionPane.showMessageDialog(this, "Error: The selected file is not a text file (must have .txt extension).");
                     return;
@@ -159,7 +155,7 @@ public class huff extends javax.swing.JFrame {
                 // Set the content of the inputTextArea with the file content
                 inputText.setText(selectedFile.getName().toString());                
                 browsed = true;
-                inputContent.setText(fileContent.toString());
+                inputContent.setText(filename);
                 
             } catch (IOException ex) {
                 ex.printStackTrace();
@@ -173,13 +169,11 @@ public class huff extends javax.swing.JFrame {
         if(browsed == false)
         {
             JOptionPane.showMessageDialog(this,"You didn't choose a file");
-            return;
         }
         else
         {
             String originalContent = inputContent.getText();                                   
-            String modifiedContent = originalContent.substring(0, originalContent.length() - 1);            
-            HuffmanCompression.compress(modifiedContent);     
+            HuffmanCompression.compress(originalContent);
         }
     }//GEN-LAST:event_compressActionPerformed
 
@@ -189,8 +183,14 @@ public class huff extends javax.swing.JFrame {
         {
             JOptionPane.showMessageDialog(this,"You didn't choose a file");
         }
+        else
+        {
+            String originalContent = inputContent.getText();
+            //String modifiedContent = originalContent.substring(0, originalContent.length() - 1);
+            HuffmanCompression.decompress(originalContent);
+        }
     }//GEN-LAST:event_decompressActionPerformed
-    
+
     /**
      * @param args the command line arguments
      */
