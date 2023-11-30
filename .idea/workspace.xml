@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9907e97e-6cd0-4400-8e43-6423062518b7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="9907e97e-6cd0-4400-8e43-6423062518b7" name="Changes" comment="seif m3rs we bya5od fiha 4 mrat flyom">
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/huffman/Huffman.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/huffman/Huffman.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/compressed.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/decompressed.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/input.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Huffman/huffman/HuffmanCompression$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Huffman/huffman/HuffmanCompression$Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Huffman/huffman/HuffmanCompression.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Huffman/huffman/HuffmanCompression.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Huffman/huffman/huff$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Huffman/huffman/huff$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Huffman/huffman/huff$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Huffman/huffman/huff$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Huffman/huffman/huff$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Huffman/huffman/huff$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Huffman/huffman/huff$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Huffman/huffman/huff$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Huffman/huffman/huff.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Huffman/huffman/huff.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/huffman/HuffmanCompression.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/huffman/HuffmanCompression.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/huffman/huff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/huffman/huff.java" afterDir="false" />
     </list>
@@ -19,6 +28,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -28,21 +40,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/Seif/Desktop/Java/LZW",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Seif/Desktop/Java/LZW&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -53,8 +66,19 @@
       <updated>1700943936109</updated>
       <workItem from="1700943937084" duration="74000" />
       <workItem from="1701102285134" duration="2177000" />
-      <workItem from="1701104986158" duration="19432000" />
+      <workItem from="1701104986158" duration="22825000" />
+      <workItem from="1701141443523" duration="134000" />
+      <workItem from="1701176089096" duration="3149000" />
     </task>
+    <task id="LOCAL-00001" summary="seif m3rs we bya5od fiha 4 mrat flyom">
+      <option name="closed" value="true" />
+      <created>1701126124496</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1701126124496</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -71,19 +95,8 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/huffman/HuffmanCompression.java</url>
-          <line>160</line>
-          <properties class="huffman.HuffmanCompression" method="writeToTextFile">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="seif m3rs we bya5od fiha 4 mrat flyom" />
+    <option name="LAST_COMMIT_MESSAGE" value="seif m3rs we bya5od fiha 4 mrat flyom" />
   </component>
 </project>

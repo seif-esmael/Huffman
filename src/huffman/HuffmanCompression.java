@@ -2,33 +2,35 @@ package huffman;
 
 import java.io.*;
 import java.math.*;
+import java.sql.SQLOutput;
 import java.util.*;
 public class HuffmanCompression {
     static class Node {
         char character;
-        int prob;
+        int frequency;
         Node left, right;
 
         public Node(char character, int prob) {
             this.character = character;
-            this.prob = prob;
+            this.frequency = prob;
         }
     }
 
     public static void compress(String filePath) {
         String input = readFromFile(filePath);
-        HashMap<Character, Integer> probabilities = new HashMap<>();
+
+        HashMap<Character, Integer> freqs = new HashMap<>();
         for (char c : input.toCharArray()) {
-            probabilities.put(c, probabilities.getOrDefault(c, 0) + 1);
+            freqs.put(c, freqs.getOrDefault(c, 0) + 1);
         }
-        PriorityQueue<Node> pq = new PriorityQueue<>(Comparator.comparingInt(n -> n.prob));
-        for (char c : probabilities.keySet()) {
-            pq.add(new Node(c, probabilities.get(c)));
+        PriorityQueue<Node> pq = new PriorityQueue<>(Comparator.comparingInt(n -> n.frequency));
+        for (char c : freqs.keySet()) {
+            pq.add(new Node(c, freqs.get(c)));
         }
         while (pq.size() > 1) {
             Node left = pq.poll();
             Node right = pq.poll();
-            Node sumNode = new Node(' ', left.prob + right.prob);
+            Node sumNode = new Node(' ', left.frequency + right.frequency);
             sumNode.left = left;
             sumNode.right = right;
             pq.add(sumNode);
@@ -36,19 +38,17 @@ public class HuffmanCompression {
         Node root = pq.poll();
         HashMap<Character, String> codes = new HashMap<>();
         generateCodes(root, "", codes);
-        String overHeadTable = toBeWrittenToFile(codes);
         StringBuilder compressedData = new StringBuilder();
         for (char c : input.toCharArray()) {
             compressedData.append(codes.get(c));
         }
         System.out.println(compressedData);
+        System.out.println(codes);
         try (DataOutputStream outputStream = new DataOutputStream(new FileOutputStream("compressed.bin"))) {
             outputStream.writeByte(codes.size());
             for (Map.Entry<Character, String> entry : codes.entrySet()) {
                 outputStream.writeByte(entry.getKey());
-                byte[] codeBytes = fromIntToByte(Integer.parseInt(entry.getValue(), 2));
-                outputStream.writeByte(codeBytes.length);
-                for (byte b : codeBytes) outputStream.writeByte(b);
+                outputStream.writeUTF(entry.getValue());
             }
             outputStream.writeShort(compressedData.length());
             outputStream.write(convertToBytes(compressedData.toString()));
@@ -65,19 +65,9 @@ public class HuffmanCompression {
                 generateCodes(node.left, code + "0", codes);
                 generateCodes(node.right, code + "1", codes);
             }
-
         }
     }
 
-    public static String toBeWrittenToFile(HashMap<Character, String> codes) {
-        StringBuilder sb = new StringBuilder();
-        for (char c : codes.keySet()) {
-            if (c != '\n') {
-                sb.append(c).append(" ").append(codes.get(c)).append("\n");
-            }
-        }
-        return sb.toString();
-    }
 
     public static void decompress(String compressedFile) {
         try(DataInputStream compressedStreamInBytes = new DataInputStream(new FileInputStream(compressedFile))) {
@@ -85,15 +75,7 @@ public class HuffmanCompression {
             HashMap<String, Character> overHeadTable = new HashMap<>();
             for (int i = 0; i < overHeadSize; i++) {
                 char character = (char) compressedStreamInBytes.readUnsignedByte();
-                int sizeOfCode = compressedStreamInBytes.readUnsignedByte();
-                int[] codeBytes = new int[sizeOfCode];
-                for (int j = 0; j < sizeOfCode; j++) {
-                    codeBytes[j] = compressedStreamInBytes.readUnsignedByte();
-                }
-                String code = "";
-                for (int codeByte : codeBytes) {
-                    code += Integer.toBinaryString(codeByte);
-                }
+                String code =compressedStreamInBytes.readUTF();
                 overHeadTable.put(code, character);
             }
             int sizeOfBinary = compressedStreamInBytes.readUnsignedShort();
@@ -101,6 +83,7 @@ public class HuffmanCompression {
             String binary = convertToBinary(bytes, sizeOfBinary);
             String output =decompressHelper(binary, overHeadTable);
             writeToTextFile(output);
+            System.out.println(output);
         } catch (IOException e){
             e.printStackTrace();
         }
